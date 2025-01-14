@@ -146,7 +146,7 @@ const scrollToCurrentHour = () => {
     <div v-if="currentWeather" :class="[getTimeClass, 'weather-info p-4 overflow-x-hidden']">
       <div class="max-w-4xl mx-auto w-full">
         <div class="current-weather-container">
-          <h2 class="text-3xl font-bold text-center">Weather in {{ currentWeather.location.name }}, {{ currentWeather.location.region }}</h2>
+          <h2 class="text-3xl font-bold text-center">Weather in <div class="italic">{{ currentWeather.location.name }}, {{ currentWeather.location.region }}</div></h2>
           <div class="mt-2">
             <div class="flex flex-row text-2xl w-full justify-center items-center">
             It's {{ currentWeather.current.temp_f }}°F and {{ currentWeather.current.condition.text }}
