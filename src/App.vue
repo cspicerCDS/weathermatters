@@ -29,10 +29,11 @@ onMounted(async() => {
   if (location.value) {
     await fetchWeather();
     setTimeout(scrollToCurrentHour, 100);
-  } else {
+  }
+ /*   else {
     // Prompt for location if we don't have a saved one
     getLocation();
-  }
+  } */
 });
 
 const fetchWeather = async () => {
@@ -112,7 +113,7 @@ const scrollToCurrentHour = () => {
             v-model="location" 
             placeholder="Enter a ZIP Code" 
             @focus="handleFocus"
-            class="border border-gray-300 rounded-md p-2" 
+            class="border border-gray-300 rounded-md p-2 text-black" 
             :class="{ 'border-red-500': inputError }"
         />
         <button type="submit" class="bg-blue-500 text-white rounded-md p-2 ml-2">Search</button>
