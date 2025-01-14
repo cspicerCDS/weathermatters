@@ -116,19 +116,19 @@ const scrollToCurrentHour = () => {
             class="border border-gray-300 rounded-md p-2 text-black" 
             :class="{ 'border-red-500': inputError }"
         />
-        <button type="submit" class="bg-blue-500 text-white rounded-md p-2 ml-2">Search</button>
+        <button type="submit" class="bg-blue-600 text-white rounded-md p-2 ml-2">Search</button>
         </div>
         <!-- Error message -->
         <div v-if="inputError" class="text-red-500 text-sm mt-1">
           {{ inputError }}
         </div>
         <div class="or block mt-2 relative w-full text-center">
-          <span :class="[getTimeClass, 'weather-info relative z-10 text-white px-2 ']">or</span>
+          <span :class="[getTimeClass, 'weather-info relative z-10 text-white px-2 ']"><span class="text-white">or</span></span>
         </div>
         <button 
           type="button" 
           @click="getLocation" 
-          class="bg-blue-500 text-white rounded-md p-2 mt-2 ml-2 flex flex-row items-center"
+          class="bg-blue-600 text-white rounded-md p-2 mt-2 ml-2 flex flex-row items-center"
         >
         <svg class="w-5 h-5" fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 width="800px" height="800px" viewBox="0 0 395.71 395.71"
@@ -150,7 +150,7 @@ const scrollToCurrentHour = () => {
           <div class="mt-2">
             <div class="flex flex-row text-2xl w-full justify-center items-center">
             It's {{ currentWeather.current.temp_f }}°F and {{ currentWeather.current.condition.text }}
-            <img :src="currentWeather.current.condition.icon" alt="weather icon" />
+            <img :src="'https:' + currentWeather.current.condition.icon" alt="weather icon" class="max-w-16	max-h-16" />
           </div>
           <p class="text-sm text-center">Feels like: {{ currentWeather.current.feelslike_f }}°F</p>
         <!--   <p class="text-lg">Humidity: {{ currentWeather.current.humidity }}%</p> -->
@@ -162,7 +162,7 @@ const scrollToCurrentHour = () => {
                  :key="hour.time"
                  :class="['forecast-item', { 'current-hour': index === currentHourIndex }]">
               <p class="time">{{ new Date(hour.time).toLocaleTimeString('en-US', { hour: 'numeric' }) }}</p>
-              <img :src="hour.condition.icon" :alt="hour.condition.text" class="w-10 h-10 mx-auto" />
+              <img :src="'https:' + hour.condition.icon" :alt="hour.condition.text" class="w-10 h-10 mx-auto" />
               <p class="temp">{{ Math.round(hour.temp_f) }}°F</p>
             </div>
           </div>
@@ -172,7 +172,7 @@ const scrollToCurrentHour = () => {
           <h3 class="text-xl font-semibold">Tomorrow's Forecast</h3>
           <div class="flex items-center gap-2">
             <img 
-              :src="currentWeather.forecast.forecastday[1].day.condition.icon" 
+              :src="'https:' + currentWeather.forecast.forecastday[1].day.condition.icon" 
               :alt="currentWeather.forecast.forecastday[1].day.condition.text"
               class="w-10 h-10"
             />
