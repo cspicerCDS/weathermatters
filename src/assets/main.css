@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+}
