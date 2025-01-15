@@ -169,8 +169,8 @@ const scrollToCurrentHour = () => {
         </div>
 
         <div class="mt-6 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-          <h3 class="text-xl font-semibold">Tomorrow's Forecast</h3>
-          <div class="flex items-center gap-2">
+          <h3 class="text-xl font-semibold text-center">Tomorrow's Forecast</h3>
+          <div class="flex items-center gap-2 justify-center">
             <img 
               :src="'https:' + currentWeather.forecast.forecastday[1].day.condition.icon" 
               :alt="currentWeather.forecast.forecastday[1].day.condition.text"
